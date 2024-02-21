@@ -1,0 +1,48 @@
+1] Dashboard -- Dashboard, left menu , search bar , profile , notifications etc
+ 
+ 2] New Item
+   -- Create a Folder
+   -- Create new Job
+   -- Copy existing Job to new job 
+   -- Create Pipeline
+
+ 3] People - All The users who can access jenkins. Only these users will be able to login into the jenkins server.
+   -- Admin
+   -- Other users e.g employees dev , qa , devops eng
+ 
+ 4] Buils History -- History for all Jobs that have run and completed with their status.
+ 
+ 5] Manage Jenkins- Most IMP - You can do most of the administrative work from these options
+
+   -- System Configuration
+      1. Configure System -- Jenkins Global Settings , Home Directory, System Mesasge, Quiet period
+
+      2. Global Tool Configuration -- Global Tools Settings for all the Jobs like JDK, Git, Maven etc
+
+      3. Manage Plugins --
+        -- All the Plugins that can be integrated with the Jenkins 
+        -- Updates , Available, Installed plugins
+        -- We can add, remove , enable / disable any plugin
+
+      4.  Manage Nodes and Clouds-- Need to add & setup Nodes [ Remote VMs] on which we can run automation.
+
+   --  Security
+
+      1. Configure Global Security
+
+      2. Manage Users -- Create / delete /Modify users that can login and access the Jenkins
+
+ 6] Configure Jenkins Job
+   
+   -- General
+    -- This project is parameterized
+    -- Restrict where this project can be run
+   -- SCM
+
+   -- Build Triggers
+
+   -- Build Environment
+
+   -- Build
+ 7] My Views 
+   -- Add view -- customize the columns for Jenkins jobs details on dashboard
