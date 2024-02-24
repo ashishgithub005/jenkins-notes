@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Print Branch Name') {
+            steps {
+                //whatever we set in paramater that bydefault got stored in params map in jenkins.
+                //"params.branchName" return "refs/remotes/origin/jenkins-setup"
+                //So to get exact branch name we need to split the "refs/remotes/origin/jenkins-setup" based on "/" and then fetch branch name
+                echo "You Have Selected branch : ${params.branchName.split("/").last()}"
+            }
+        }
+         stage('Git Checkout') {
+            steps {
+               git branch: "${params.branchName.split("/").last()}", credentialsId: 'gitlab-cred', url: 'https://gitlab.com/react-js4370551/react-using-function/k8s-demo.git' 
+            }
+        }
+    }
+}

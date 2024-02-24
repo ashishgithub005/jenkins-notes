@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    //two way to set parameters.
+    //1. using UI: select "This project is parameterized" then click on "AddParameter" then select "Choise Parameter" and name in chiose add environment like DEV, IT, STAGE etc.
+    //2. Goto pipeline syntax, then select "Declarative Directive Generator" and then in "Sample Directive" select "Parameters" and then click "Add" button and select "Choise Parameter" and add environemnt like IT, DEV, STAG etc
+    parameters {
+      choice choices: ['DEV', 'IT', 'QA', 'UAT', 'STAGE', 'PRE_PRD', 'PROD'], description: 'select environment', name: 'environment'
+    }
+
+    stages {
+        stage('Print Environment Variable') {
+            //if evvironment is "DEV" then execute only DEV stage.
+            when {
+              expression{
+                  params.environment == "DEV"
+              }
+            }
+            steps {
+                echo "You Have Selected Environment : ${params.environment}"
+            }
+        }
+    }
+}
