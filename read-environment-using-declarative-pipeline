@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    //two way to set parameters.
+    //two way to set choise parameters.
     //1. using UI: select "This project is parameterized" then click on "AddParameter" then select "Choise Parameter" and name in chiose add environment like DEV, IT, STAGE etc.
     //2. Goto pipeline syntax, then select "Declarative Directive Generator" and then in "Sample Directive" select "Parameters" and then click "Add" button and select "Choise Parameter" and add environemnt like IT, DEV, STAG etc
     parameters {
