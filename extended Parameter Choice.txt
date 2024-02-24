@@ -1,0 +1,21 @@
+extended Parameter Choice ::
+
+Bydefault extended parameters choice is not avaiable so first we need to install extended Parameter Choice plugin then you can see.
+From jenkins syntax we can generate code this.
+
+
+pipeline {
+    agent any
+    parameters {
+      extendedChoice description: 'Select the environment on which you want to build application', multiSelectDelimiter: ',', name: 'environment', quoteValue: false, saveJSONParameterToFile: false, type: 'PT_CHECKBOX', value: 'DEV,IT,QA,UAT,STAGE,PRE_PROD,PROD', visibleItemCount: 10
+    }
+
+    stages {
+        stage('Fetch Environment') {
+            steps {
+                echo "environment selected : ${params.environment}"
+            }
+        }
+    }
+
+}

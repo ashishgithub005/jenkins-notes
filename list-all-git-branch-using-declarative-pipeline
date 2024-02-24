@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    
+    parameters {
+      listGitBranches branchFilter: '.*', credentialsId: 'gitlab-cred', defaultValue: '', description: 'Select branch name which you want to build', listSize: '5', name: 'branchName', quickFilterEnabled: false, remoteURL: 'https://gitlab.com/react-js4370551/react-using-function/k8s-demo.git', selectedValue: 'NONE', sortMode: 'NONE', tagFilter: '*', type: 'PT_BRANCH'
+    }
 
     stages {
         stage('Print Branch Name') {
